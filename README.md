@@ -51,7 +51,6 @@ int main(void)
 ```
 
 ## Resources
-* **Documentation**: Linux manual pages for `read(2)`, `malloc(3)`, and `free(3)`.
-* **AI Usage**: AI was used as an interactive pedagogical tool during the development of this project. Specifically:
-    * **Memory Management**: Used to identify the exact point of memory leaks within the custom `strjoin` implementation (Use-After-Free errors) and to debug segmentation faults caused by dereferencing NULL pointers during the initial static variable allocation.
+* **Documentation**: Linux manual pages for `read`, `malloc`, and `free`.
+* **AI Usage**: AI was used as an interactive pedagogical tool during the development of this project. Specifically:.
     * **Norminette Optimization**: Used to refactor the algorithmic logic to comply with the 42 standard 25-line limit by splitting the core logic into modular helper functions (`read_to_mem`, `extract_line`, `update_mem`).
