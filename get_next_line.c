@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 17:03:05 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/02/14 17:03:05 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/03/02 21:34:51 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*read_to_mem(int fd, char *mem, char *buffer)
 {
-	int	bytes_read;
+	int		bytes_read;
 
 	bytes_read = 0;
 	while (!(f_strchr(mem, '\n')))
@@ -29,6 +29,8 @@ char	*read_to_mem(int fd, char *mem, char *buffer)
 			break ;
 		buffer[bytes_read] = '\0';
 		mem = f_strjoin(mem, buffer);
+		if (!mem)
+			break ;
 	}
 	return (mem);
 }
@@ -40,7 +42,6 @@ char	*extract_line(char *mem)
 	int		j;
 
 	i = 0;
-	j = 0;
 	if (!mem || !mem[0])
 		return (NULL);
 	while (mem[i] && mem[i] != '\n')
@@ -50,6 +51,7 @@ char	*extract_line(char *mem)
 	line = (char *)malloc(sizeof(char) * (i + 1));
 	if (!line)
 		return (NULL);
+	j = 0;
 	while (j < i)
 	{
 		line[j] = mem[j];
@@ -96,21 +98,20 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
+	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE) + 1);
 	if (!buffer)
 		return (NULL);
-	if (!mem)
-	{
-		mem = (char *)malloc(sizeof(char) * 1);
-		if (!mem)
-			return (NULL);
-		mem[0] = '\0';
-	}
 	mem = read_to_mem(fd, mem, buffer);
 	free (buffer);
 	if (!mem)
 		return (NULL);
 	line = extract_line(mem);
+	if(!line)
+	{
+		free(mem);
+		mem = NULL;
+		return (NULL);
+	}
 	mem = update_mem(mem);
 	return (line);
 }
