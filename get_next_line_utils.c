@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 17:02:29 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/03/03 15:08:02 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/03/03 15:29:02 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,11 @@ char	*f_strjoin(char *s1, char *s2)
 		return (NULL);
 	}
 	i = 0;
-	while (s1[i])
-		tmp[i++] = s1[i++];
+	while (s1 && s1[i])
+	{
+		tmp[i] = s1[i];
+		i++;
+	}
 	j = 0;
 	while (s2[j])
 		tmp[i++] = s2[j++];
