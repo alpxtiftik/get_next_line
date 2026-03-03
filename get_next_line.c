@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 17:03:05 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/03/02 21:34:51 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/03/03 15:15:11 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,7 @@ char	*extract_line(char *mem)
 		return (NULL);
 	j = 0;
 	while (j < i)
-	{
-		line[j] = mem[j];
-		j++;
-	}
+		line[j++] = mem[j++];
 	line[i] = '\0';
 	return (line);
 }
