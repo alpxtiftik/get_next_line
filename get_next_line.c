@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 17:03:05 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/03/03 15:38:05 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/03/03 15:50:19 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,13 @@ char	*update_mem(char *mem)
 	i = 0;
 	while (mem[i] && mem[i] != '\n')
 		i++;
-	if (!mem[i])
+	if (!mem[i] || !mem[i + 1])
 	{
 		free(mem);
 		return (NULL);
 	}
 	new_mem = (char *)malloc(sizeof(char) * (f_strlen(mem) - i + 1));
-	if (!new_mem || !mem[i + 1])
+	if (!new_mem)
 	{
 		free(mem);
 		return (NULL);
