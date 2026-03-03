@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ahtiftik <ahtiftik@student.42istanbul.com. +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/14 17:02:29 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/03/03 15:29:02 by ahtiftik         ###   ########.fr       */
+/*   Created: 2026/03/03 19:52:37 by ahtiftik          #+#    #+#             */
+/*   Updated: 2026/03/03 19:52:40 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

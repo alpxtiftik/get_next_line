@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ahtiftik <ahtiftik@student.42istanbul.com. +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/14 16:58:50 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/02/14 16:58:50 by ahtiftik         ###   ########.fr       */
+/*   Created: 2026/03/03 19:52:52 by ahtiftik          #+#    #+#             */
+/*   Updated: 2026/03/03 19:52:54 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 1042
 # endif
 
 # include <unistd.h>

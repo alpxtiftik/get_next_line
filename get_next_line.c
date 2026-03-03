@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ahtiftik <ahtiftik@student.42istanbul.com. +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/14 17:03:05 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/03/03 15:50:19 by ahtiftik         ###   ########.fr       */
+/*   Created: 2026/03/03 19:52:47 by ahtiftik          #+#    #+#             */
+/*   Updated: 2026/03/03 19:52:49 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*read_to_mem(int fd, char *mem, char *buffer)
 {
-	int		bytes_read;
+	int	bytes_read;
 
 	bytes_read = 0;
 	while (!(f_strchr(mem, '\n')))
