@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 17:03:05 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/03/03 15:29:27 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/03/03 15:38:05 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*read_to_mem(int fd, char *mem, char *buffer)
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
 		{
-			free (mem);
+			free(mem);
 			return (NULL);
 		}
 		if (bytes_read == 0)
@@ -72,13 +72,13 @@ char	*update_mem(char *mem)
 		i++;
 	if (!mem[i])
 	{
-		free (mem);
+		free(mem);
 		return (NULL);
 	}
 	new_mem = (char *)malloc(sizeof(char) * (f_strlen(mem) - i + 1));
-	if (!new_mem)
+	if (!new_mem || !mem[i + 1])
 	{
-		free (mem);
+		free(mem);
 		return (NULL);
 	}
 	i++;
@@ -86,7 +86,7 @@ char	*update_mem(char *mem)
 	while (mem[i])
 		new_mem[j++] = mem[i++];
 	new_mem[j] = '\0';
-	free (mem);
+	free(mem);
 	return (new_mem);
 }
 
@@ -98,11 +98,11 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE) + 1);
+	buffer = (char *)malloc(sizeof(char) * ((size_t)BUFFER_SIZE + 1));
 	if (!buffer)
 		return (NULL);
 	mem = read_to_mem(fd, mem, buffer);
-	free (buffer);
+	free(buffer);
 	if (!mem)
 		return (NULL);
 	line = extract_line(mem);
